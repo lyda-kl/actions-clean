@@ -1,19 +1,15 @@
-# Clean
+# Runner Post Cleanup
+A Github Action to clean the runner workspace - mostly copied from https://github.com/colpal/actions-clean. 
 
-A Github Action to clean the runner workspace
-
-If you are using a self-hosted runner, it is **highly** recommended you set this action to run unconditionally as your
-last step.
+This runs a cleanup script as a post job action - just add the step anywhere in the job.
 
 ## Usage
-
 ```yaml
 # ...
 steps:
-  - uses: actions/checkout@v2.3.0
+  - uses: TooMuch4U/runner-post-cleanup@v1
+# - step 1
 # - step 2
 # - step 3
 # - ...
-  - uses: colpal/actions-clean@v1
-    if: ${{ always() }} # To ensure this step runs even when earlier steps fail
 ```
